@@ -44,5 +44,7 @@ public class Task1 {
         System.out.println("Количестве нечетных чисел: " + numsOdd);
         System.out.println("Сумме всех элементов массива: " + sumAllElements);
 
+        sc.close();
+
     }
 }
