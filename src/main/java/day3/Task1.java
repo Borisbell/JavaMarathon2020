@@ -37,5 +37,6 @@ public class Task1 {
                     break;
             }
         }
+        sc.close();
     }
 }

@@ -16,5 +16,6 @@ public class Task3 {
             System.out.println(a / b);
             counter++;
         }
+        sc.close();
     }
 }
