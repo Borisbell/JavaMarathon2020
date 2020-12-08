@@ -2,8 +2,8 @@ package day7;
 
 public class Player {
     private int stamina;
-    final int MAX_STAMINA = 100;
-    final int MIN_STAMINA = 0;
+    private final int MAX_STAMINA = 100;
+    private final int MIN_STAMINA = 0;
     static int countPlayers;
 
 
