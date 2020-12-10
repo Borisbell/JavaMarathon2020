@@ -3,11 +3,11 @@ package day9.Task2;
 import static java.lang.Math.PI;
 
 public class Circle extends Figure {
-    double radius;
+    private double radius;
 
     public Circle(double radius, String color) {
+        super(color);
         this.radius = radius;
-        this.color = color;
     }
 
     @Override

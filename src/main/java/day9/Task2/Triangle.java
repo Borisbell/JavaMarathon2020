@@ -8,10 +8,10 @@ public class Triangle extends Figure {
     private double side3;
 
     public Triangle(double side1, double side2, double side3, String color) {
+        super(color);
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
-        this.color = color;
     }
 
     @Override
