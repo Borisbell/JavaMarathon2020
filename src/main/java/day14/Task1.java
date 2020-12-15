@@ -19,24 +19,22 @@ public class Task1 {
             Scanner scanner = new Scanner(file);
             String line = scanner.nextLine();
             String[] numString = line.split(" ");
-            int[] numbers = new int[10];
-            int counter = 0;
-            try {
-                for (String number : numString) {
-                    numbers[counter++] = Integer.parseInt(number);
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Некорректный входной файл");
-            }
+
+            if (numString.length != 10)
+                throw new IllegalArgumentException();
+
             int sum = 0;
-            for (int n : numbers) {
-                sum += n ;
+
+            for (String number : numString) {
+                sum += Integer.parseInt(number);
             }
-            //System.out.println(Arrays.toString(numbers));
+
             System.out.println(sum);
             scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
         }
 
     }

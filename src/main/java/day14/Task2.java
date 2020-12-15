@@ -18,23 +18,19 @@ public class Task2 {
             while (scanner.hasNextLine()) {
                 String nameAge = scanner.nextLine();
                 String[] numString = nameAge.split(" ");
-                //System.out.println(Arrays.toString(numString));
-                int num = Integer.parseInt(numString[1]);
-                //System.out.println(num);
-                if (num < 0) {
-                    try {
-                        throw new IOException();
-                    } catch (IOException e) {
-                        System.out.println("Некорректный входной файл");
-                    }
+                if (Integer.parseInt(numString[1]) < 0) {
+                        throw new IllegalArgumentException();
                 }
                 data.add(nameAge);
             }
             scanner.close();
+            return data;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
         }
-        return data;
+        return null;
     }
 }
 

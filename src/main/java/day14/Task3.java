@@ -21,22 +21,19 @@ public class Task3 {
             while (scanner.hasNextLine()) {
                 String nameAge = scanner.nextLine();
                 String[] numString = nameAge.split(" ");
-                int num = Integer.parseInt(numString[1]);
-                String name = numString[0];
-                if (num < 0) {
-                    try {
-                        throw new IOException();
-                    } catch (IOException e) {
-                        System.out.println("Некорректный входной файл");
-                    }
+                if (Integer.parseInt(numString[1]) < 0) {
+                        throw new IllegalArgumentException();
                 }
-                Person person = new Person(name, num);
+                Person person = new Person(numString[0], Integer.parseInt(numString[1]));
                 data.add(person);
             }
             scanner.close();
+            return data;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
         }
-        return data;
+        return null;
     }
 }
