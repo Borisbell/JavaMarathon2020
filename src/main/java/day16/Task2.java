@@ -16,14 +16,13 @@ public class Task2 {
         PrintWriter pw2 = new PrintWriter(fileOut2);
 
         List<Integer> list1 = new ArrayList<>();
-        List<Double> list2 = new ArrayList<>();
         for (int i = 0; i < 1000; i++) {
             list1.add((int) (Math.random() * 101));
-            pw1.print((int) (Math.random() * 101) + " ");
         }
-//        Проверка списка рандомных чисел
-//        System.out.println(list1);
-//        System.out.println(list1.size());
+
+        for (int x : list1) {
+            pw1.print(x + " ");
+        }
 
         int partitionSize = 20;
         Integer sum = 0;
@@ -31,12 +30,8 @@ public class Task2 {
             for (Integer mark : list1.subList(i, Math.min(i + partitionSize, list1.size()))) {
                 sum += mark;
             }
-            list2.add(sum.doubleValue() / list1.subList(i, Math.min(i + partitionSize, list1.size())).size());
             pw2.print((sum.doubleValue() / list1.subList(i, Math.min(i + partitionSize, list1.size())).size()) + " ");
         }
-//        Проверка списка со средними значениями
-//        System.out.println(list2);
-//        System.out.println(list2.size());
 
         pw1.close();
         pw2.close();
