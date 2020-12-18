@@ -13,12 +13,12 @@ public enum ChessPiece {
     KNIGHT_BLACK(3, "♞"),
     PAWN_WHITE(1, "♙"),
     PAWN_BLACK(1, "♟"),
-    EMPTY(-1,"_");
+    EMPTY(-1, "_");
 
     private double value;
     private String sign;
 
-    ChessPiece (double value, String sign){
+    ChessPiece(double value, String sign) {
         this.value = value;
         this.sign = sign;
     }

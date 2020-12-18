@@ -16,8 +16,8 @@ public class Task1 {
             pieces.add(piece2);
         }
 
-        for(ChessPiece piece : pieces){
-            System.out.print(piece.getSign()+ " ");
+        for (ChessPiece piece : pieces) {
+            System.out.print(piece.getSign() + " ");
         }
     }
 }
